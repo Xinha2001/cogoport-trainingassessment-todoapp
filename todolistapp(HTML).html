@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <link rel="stylesheet" href="todolistapp(CSS).css">
+  </head>
+  <body>
+  <div class="todo-container">
+    <h2 class="header_css">To-do List</h2>
+    <div class="options_container">
+        <select id="sortOption" onchange="sortTasks()">
+            <option value="N.A" disabled selected>Sort By</option>
+            <option value="Date">Date (Latest to Oldest)</option>
+            <option value="Priority">Priority (High to Low)</option>
+        </select>
+        <input type="text" id="groupTagInput" placeholder="Group by tag">
+        <button onclick="groupByTag()">Enter</button>
+    </div>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search tasks or categories">
+        <button onclick="searchTasks()">Enter</button>
+      </div>
+          <div class="container">
+            <div class="dropdown">
+        <button class="dropbtn">Menu</button>
+      
+        <div class="dropdown-content">
+        <!-- <a href="#" onclick="showReminders()">Reminders</a> -->
+          <a href="#" onclick="viewCompletedTasks()">Completed tasks</a>
+          <a href="#" onclick="viewPendingTasks()">Pending tasks</a>
+          
+        </div>
+        </div>
+      </div>
+      
+      <div id="details">
+        <input type="text" id="taskInput" placeholder="Please enter task details" onkeydown="handleKeyPress(event)" class="todo-taskdetails">
+        <input type="text" id="categoryInput" placeholder="Please enter category">
+        <input type="text" id="tagInput" placeholder="Please enter tag">
+        <input type="date" id="dueDateInput">
+        <select id="priorityInput">
+          <option value="N.A" disabled selected>Select Priority</option>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+        <button onclick="addTask()" id="todo-buttondetails">Save</button>
+      </div>
+      <table id="taskTable">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Category</th>
+            <th>Due Date</th>
+            <th>Priority</th>
+            <th>Status</th>
+            <th>Tag</th>
+            <th>Modify</th>
+            <!-- <th>Reminder</th> -->
+          </tr>
+        </thead>
+        <tbody id="taskList"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="todolistapp(JS).js"></script>
+</body>
+</html>
